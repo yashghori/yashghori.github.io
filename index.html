@@ -1,14 +1,174 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Yash Ghori</title>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
-<h1> This is Homepage</h1>
-    
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient">
+        <div class="container"><a class="navbar-brand logo" href="#">Portfolio</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navbarNav"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="cv.html">CV</a></li> -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main id=home class="page lanidng-page">
+        <section class="portfolio-block block-intro">
+            <div class="container">
+                <div class="avatar" style="background-image:url(&quot;assets/img/avatars/avatar.png&quot;);"></div>
+                <div class="about-me">
+                    <p>Hello! I am <strong>Yash Ghori</strong>. I am Web Developer and  Programmer </p>
+                    <div class="d-flex flex-row justify-content-center align-items-center flex-wrap flex-shrink-2">
+                        <div class="skill-icon"><img width="48px" height="48px" src="assets/img/skill_logo/c_48.svg"/></div>
+                        <div class="skill-icon"><img width="48px" height="48px" src="assets/img/skill_logo/html_48.svg"/></div>
+                        <div class="skill-icon"><img width="48px" height="48px" src="assets/img/skill_logo/css_48.svg"/></div>
+                        <div class="skill-icon"><img width="48px" height="48px" src="assets/img/skill_logo/javascript_48.svg"/></div>
+                        <div class="skill-icon"><img width="48px" height="48px" src="assets/img/skill_logo/python.svg"/></div>
+                        <!-- <div class="skill-icon"><img height="48px" src="assets/img/skill_logo/django.svg"/></div>
+                        <div class="skill-icon"><img width="48px" height="48px" src="assets/img/skill_logo/flask.svg"/></div> -->
+                    </div>
+                </footer>
+                </div>
+            </div>
+            <section class="portfolio-block project-no-images" style="padding-bottom: 0;">
+                <div class="container">
+                    <div id="projects" class="heading">
+                        <h2>Recent Work</h2>
+                    </div>
+                    <div class="row">
+                        <!-- <div class="col-md-6 col-lg-4">
+                            <div class="project-card-no-image">
+                                <a class="project-title" href="https://greyshortner.herokuapp.com/" target="_blank"><h3 style="min-height: 50px;">Grey URL Shortner</h3></a>
+                                <div class="project-footer">
+                                    <span class="project-footer-left">
+                                        <a class="" href="https://github.com/rugvedkoshiya/Grey-URL-Shortner" target="_blank"><img class="git-logo" src="./assets/img/github_dark.png" alt="GitHub" srcset=""></a>
+                                    </span>
+                                    <div class="project-footer-right tags"><a href="#">Flask</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="project-card-no-image">
+                                <a class="project-title" href="https://ytplaylistlength.herokuapp.com/" target="_blank"><h3 style="min-height: 50px;">YouTube Playlist Length Finder</h3></a>
+                                <div class="project-footer">
+                                    <span class="project-footer-left">
+                                        <a class="" href="https://github.com/rugvedkoshiya/ytplaylistlength" target="_blank"><img class="git-logo" src="./assets/img/github_dark.png" alt="GitHub" srcset=""></a>
+                                    </span>
+                                    <div class="project-footer-right tags"><a href="#">Django</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="project-card-no-image">
+                                <a class="project-title" href="https://rugvedkoshiya.github.io/smart-attendance-system/" target="_blank"><h3 style="min-height: 50px;">Smart Attendance System Front-End (NEW)</h3></a>
+                                <div class="project-footer">
+                                    <span class="project-footer-left">
+                                        <a class="" href="https://github.com/rugvedkoshiya/smart-attendance-system" target="_blank"><img class="git-logo" src="./assets/img/github_dark.png" alt="GitHub" srcset=""></a>
+                                    </span>
+                                    <div class="project-footer-right tags"><a href="#">HTML, CSS, JS</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="project-card-no-image">
+                                <a class="project-title" href="https://colab.research.google.com/github/rugvedkoshiya/YouTube-Downloader/blob/main/YouTube%20Downloader.ipynb" target="_blank"><h3 style="min-height: 50px;">YouTube Downloader Using Google Colab (Not Working)</h3></a>
+                                <div class="project-footer">
+                                    <span class="project-footer-left">
+                                        <a class="" href="https://github.com/rugvedkoshiya/YouTube-Downloader" target="_blank"><img class="git-logo" src="./assets/img/github_dark.png" alt="GitHub" srcset=""></a>
+                                    </span>
+                                    <div class="project-footer-right tags"><a href="#">Python</a></div>
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="project-card-no-image">
+                                <a class="project-title" href="https://ghori.me/SpeakingBooks/" target="_blank"><h3 style="min-height: 50px;">Speaking Books</h3></a>
+                                <div class="project-footer">
+                                    <span class="project-footer-left">
+                                        <a class="" href="https://github.com/yashghori/SpeakingBooks" target="_blank"><img class="git-logo" src="./assets/img/github_dark.png" alt="GitHub" srcset=""></a>
+                                    </span>
+                                    <div class="project-footer-right tags"><a href="#">HTML, CSS, JS</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="project-card-no-image">
+                                <a class="project-title" href="https://yashghori.github.io/Responsive_website/" target="_blank"><h3 style="min-height: 50px;">My Food</h3></a>
+                                <div class="project-footer">
+                                    <span class="project-footer-left">
+                                        <a class="" href="https://github.com/yashghori/Responsive_website" target="_blank"><img class="git-logo" src="./assets/img/github_dark.png" alt="GitHub" srcset=""></a>
+                                    </span>
+                                    <div class="project-footer-right tags"><a href="#">HTML, CSS</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="project-card-no-image">
+                                <a class="project-title" href="https://github.com/yashghori/XoXoGym" target="_blank"><h3 style="min-height: 50px;">Gym Site</h3></a>
+                                <div class="project-footer">
+                                    <span class="project-footer-left">
+                                        <a class="" href="https://yashghori.github.io/XoXoGym/" target="_blank"><img class="git-logo" src="./assets/img/github_dark.png" alt="GitHub" srcset=""></a>
+                                    </span>
+                                    <div class="project-footer-right tags"><a href="#">HTML, CSS</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="project-card-no-image">
+                                <a class="project-title" href="https://github.com/yashghori/Static_webdesign" target="_blank"><h3 style="min-height: 50px;">Static Website</h3></a>
+                                <div class="project-footer">
+                                    <span class="project-footer-left">
+                                        <a class="" href="https://yashghori.github.io/Static_webdesign/" target="_blank"><img class="git-logo" src="./assets/img/github_dark.png" alt="GitHub" srcset=""></a>
+                                    </span>
+                                    <div class="project-footer-right tags"><a href="#">HTML, CSS</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="col"></div>
+                        <div class="col"></div> -->
+                    </div>
+                </div>  
+            </section>
+        </section>
+    </main>
+    <footer class="page-footer">
+        <div class="container">
+            <!-- <div class="links"><a href="#">About me</a><a href="#">Contact me</a><a href="#">Projects</a></div> -->
+            <div class="social-icons">
+                <a href="https://www.facebook.com/rugvedkoshiya" target="_blank"><i class="icon ion-social-facebook"></i></a>
+                <a href="https://www.instagram.com/rugvedkoshiya" target="_blank"><i class="icon ion-social-instagram-outline"></i></a>
+                <a href="https://twitter.com/rugvedkoshiya" target="_blank"><i class="icon ion-social-twitter"></i></a>
+                <a href="https://www.youtube.com/channel/UCRng0qT24YtE9y6e-fdgY8w" target="_blank"><i class="icon ion-social-youtube"></i></a>
+                <a href="https://github.com/rugvedkoshiya" target="_blank"><i class="icon ion-social-github"></i></a>
+                <a href="https://www.linkedin.com/in/rugved-koshiya-b52a18185/" target="_blank"><i class="icon ion-social-linkedin"></i></a>
+                <a href="mailto:rugvedkoshiya2002@gmail.com" target="_blank"><i class="icon ion-android-mail"></i></a>
+                <!-- <a href="#"><i class="icon ion-social-html5"></i></a>
+                <a href="#"><i class="icon ion-social-css3"></i></a>
+                <a href="#"><i class="icon ion-social-javascript"></i></a>
+                <a href="#"><i class="icon ion-social-python"></i></a> -->
+
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+    <script src="https://kit.fontawesome.com/05499ccf49.js" crossorigin="anonymous"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
+
 </html>

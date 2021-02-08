@@ -1,0 +1,36 @@
+* {
+    scroll-behavior: smooth;
+}
+
+.git-logo {
+    width: 25px;
+    height: 25px;
+}
+
+.project-footer-left {
+    float: left;
+}
+
+.project-footer-right {
+    float: right;
+}
+
+.project-footer::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.project-title {
+    text-decoration: none;
+    color: #000000;
+}
+
+.project-title:hover {
+    text-decoration: none;
+    color: #000000;
+}
+
+.skill-icon {
+    margin: 5px 10px;
+}
