@@ -768,3 +768,35 @@ ul {
 }
 /* contact end */
 
+/* footer start */
+.footer-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 0;  
+  color: var(--text-black-600);
+}
+.footer-section .p a{
+  color: var(--text-black-600);
+  line-height: 40px;
+}
+.footer-section .p {
+
+  text-align: center;
+}
+.footer-section .social-links{
+  padding: 12px;
+  
+}
+.footer-section .social-links a{
+  padding: 12px;
+  color: var(--text-black-600);
+  margin: 5px;
+  border-radius: 50%;
+}
+.footer-section .social-links a::after{
+  border-radius: 50%;
+}
+/* footer end */
+
