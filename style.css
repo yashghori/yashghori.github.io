@@ -125,6 +125,7 @@ body.dark{
   border: 2px solid var(--skin-color);
   font-weight: 600;
   text-transform: uppercase;
+  animation: spin 10s linear infinite;
 }
 .header .hambueger {
   height: 40px;
@@ -713,6 +714,7 @@ ul {
   font-size: 25px;
   transition: all 0.3s ease;
   line-height: 60px;
+ 
 }
 .service-section .service-item-inner h3{
   font-weight: 600;
@@ -792,10 +794,13 @@ ul {
   
 }
 .footer-section .social-links a{
-  padding: 12px;
+  padding: 9px;
   color: var(--text-black-600);
   margin: 5px;
   border-radius: 50%;
+}
+.footer-section .social-links a:hover{
+  color: var(--skin-color);
 }
 .footer-section .social-links a::after{
   border-radius: 50%;

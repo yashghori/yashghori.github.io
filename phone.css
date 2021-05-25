@@ -16,6 +16,9 @@
     max-width: 100%;
     margin: auto;
   }
+  .service-section .service-item-inner .icon i{
+    color: var(--skin-color);
+  }
   .home-section .home-text {
     order: 2;
     text-align: center;
@@ -100,4 +103,15 @@
     max-width: 100%;
     margin: auto;
   }
+  .effect-2{
+    bottom: 10%;
+  }
+  .effect-4 {
+    left: 15%;
+    top: 10%;
+}
+.effect-5 {
+  right: 7%;
+  top: 51%;
+}
 }
