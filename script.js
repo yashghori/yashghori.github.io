@@ -66,9 +66,7 @@ function changeColor() {
 // first we check color key exist??
 if (localStorage.getItem("color") !== null) {
   changeColor()
-} else {
-  console("nop")
-}
+} 
 
 // theme light and dark mode
 const dayNight = document.querySelector(".day-night")
@@ -85,15 +83,13 @@ dayNight.addEventListener("click", () => {
 function themeMode() {
   // again just checking if key is present or not
   if (localStorage.getItem("theme") !== null ) {
-
-    console.log("y")
+    
     if (localStorage.getItem("theme") === "light" ) {
       document.body.classList.remove("dark")
       
     }else{
-      console.log("n")
       document.body.classList.add("dark")
-
+      
     }
     
   }
