@@ -17,6 +17,7 @@ body {
 
 /* custom variable */
 :root {
+  --for-switcher: #c3b8b847;
   --bg-black-900: #000000;
   --bg-black-100: #dddddd;
   --bg-black-50: #eff0f4;
@@ -33,6 +34,7 @@ body {
 }
 /*override custom variable for dark mode :( funny naa*/
 body.dark{
+  --for-switcher:rgba(83, 81, 81, 0.4);
   --bg-black-900: #ffffff;
   --bg-black-100: #353535;
   --bg-black-50: #2b2c2f;

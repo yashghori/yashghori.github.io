@@ -2,17 +2,23 @@
 .style-switcher {
   position: fixed;
   top: 77px;
-  right: 0px;
+  right: -15px;
   padding: 15px;
   width: 200px;
   z-index: 5464561;
   border-radius: 5px;
   transition: all 0.3s ease;
   transform: translateX(100%);
-}
-.style-switcher.open{
-    transform: translateX(-15px);
 
+  /* glassmorphism */
+  /* background: var(--text-black-700); */
+  background: var(--for-switcher);
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(3.5px);
+ 
+}
+.style-switcher.open {
+  transform: translateX(-15px);
 }
 .style-switcher .s-icon {
   position: absolute;
@@ -21,12 +27,17 @@
   text-align: center;
   font-size: 20px;
   right: 100%;
-  margin-right: 15px;
+  margin-right: 40px;
   cursor: pointer;
   color: var(--bg-black-900);
   /* text-align: center; */
   transition: all 0.3s ease;
   border-radius: 50%;
+
+ 
+  background: var(--for-switcher);
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(3.5px);
 }
 .style-switcher .s-icon i {
   line-height: 40px;
@@ -48,30 +59,31 @@
   margin: 0 0 10px;
   text-transform: capitalize;
 }
-.style-switcher .colors{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+.style-switcher .colors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
-.style-switcher span{
-    display: inline-block;
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    cursor: pointer;
+.style-switcher span {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  cursor: pointer;
 }
-.style-switcher .color-1{
-    background-color: #fb839e;
+.style-switcher .color-1 {
+  background-color: #fb839e;
 }
-.style-switcher .color-2{
-    background-color: #ec9412;
+.style-switcher .color-2 {
+  background-color: #ec9412;
 }
-.style-switcher .color-3{
-    background-color: #1fc581;
+.style-switcher .color-3 {
+  background-color: #1fc581;
 }
-.style-switcher .color-4{
-    background-color: #2eb1ed;
+.style-switcher .color-4 {
+  background-color: #2eb1ed;
 }
-.style-switcher .color-5{
-    background-color: #cc3a3b;
+.style-switcher .color-5 {
+  background-color: #cc3a3b;
 }
+
