@@ -439,11 +439,13 @@ ul {
   border: 10px solid transparent; 
   border-radius: 50%;
 }
+.footer-section .social-links,
 .about-section .about-img .social-links{
     margin-top: 20px;
     text-align: center;
     
 }
+.footer-section .social-links a,
 .about-section .about-img .social-links a{
     margin:0 12px;
     border-radius: 50%;
@@ -455,13 +457,16 @@ ul {
     color: var(--text-black-600);
     transition: all 0.3s ease;
 }
+.footer-section .social-links a:hover,
 .about-section .about-img .social-links a:hover{
     color: var(--skin-color);
 }
+.footer-section .social-links a i,
 .about-section .about-img .social-links a i{
     line-height: 40px;
 
 }
+.footer-section .social-links a::after,
 .about-section .about-img .social-links a::after{
     border-radius:50%;
 }
@@ -784,26 +789,6 @@ ul {
 .footer-section .p a{
   color: var(--text-black-600);
   line-height: 40px;
-}
-.footer-section .p {
-
-  text-align: center;
-}
-.footer-section .social-links{
-  padding: 12px;
-  
-}
-.footer-section .social-links a{
-  padding: 9px;
-  color: var(--text-black-600);
-  margin: 5px;
-  border-radius: 50%;
-}
-.footer-section .social-links a:hover{
-  color: var(--skin-color);
-}
-.footer-section .social-links a::after{
-  border-radius: 50%;
+  border-bottom: 1px solid var(--text-black-600);
 }
 /* footer end */
-
