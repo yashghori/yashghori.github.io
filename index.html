@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>yash ghori</title>
     <script src="https://kit.fontawesome.com/d9361e7e09.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="phone.css">
     <link rel="stylesheet" href="style-switcher.css">
@@ -22,15 +23,20 @@
 </head>
 
 <body>
+    <!-- scroll up button start -->
+    <div class="scroll-up">
+        <i class="fas fa-caret-up"></i>
+    </div>
+    <!-- scroll up button end -->
     <!-- preloader start-->
-    <!-- preloader end-->
-        <div class="preloader">
-            <div class="box">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
+    <div class="preloader">
+        <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
+    </div>
+    <!-- preloader end-->
     <!-- header start -->
     <header class="header">
         <div class="container">
@@ -262,7 +268,8 @@
                                         <span>June, 2019 - Present</span>
                                         <h3>B Tech, IT</h3>
                                         <h4>BVM</h4>
-                                        <p>BVM has made its mark nationally and internationally by developing learners with passion and commitment to work in a global environment.</p>
+                                        <p>BVM has made its mark nationally and internationally by developing learners
+                                            with passion and commitment to work in a global environment.</p>
                                     </div>
                                 </div>
                                 <!-- timeline item end -->
@@ -273,7 +280,9 @@
                                         <span>2017 - 2019</span>
                                         <h3>Science</h3>
                                         <h4>Shree Swaminarayan Gurukul</h4>
-                                        <p>'Where tradition and vision meet' apply describes the philosophy upon which Shree Swaminarayan Gurukul Campus bases the design of education it offers for its students.</p>
+                                        <p>'Where tradition and vision meet' apply describes the philosophy upon which
+                                            Shree Swaminarayan Gurukul Campus bases the design of education it offers
+                                            for its students.</p>
                                     </div>
                                 </div>
                                 <!-- timeline item end -->
@@ -325,7 +334,8 @@
                             <i class="fas fa-code"></i>
                         </div>
                         <h3>Clean code</h3>
-                        <p> Especially if you work on code that is read by more than just you, it's very, very useful.</p>
+                        <p> Especially if you work on code that is read by more than just you, it's very, very useful.
+                        </p>
                     </div>
                 </div>
                 <!-- services item end -->
@@ -359,7 +369,8 @@
                 <div class="contact-item">
                     <div class="contact-item-inner outer-shadow">
                         <a target="_blank" href="https://ghori.me/MusicPlayer/"><span>Ghori Music</span></a>
-                        <a target="_blank" href="https://github.com/yashghori/MusicPlayer"><i class="fab fa-github"></i></a>
+                        <a target="_blank" href="https://github.com/yashghori/MusicPlayer"><i
+                                class="fab fa-github"></i></a>
                     </div>
                 </div>
                 <!-- contact item end -->
@@ -367,7 +378,8 @@
                 <div class="contact-item">
                     <div class="contact-item-inner outer-shadow">
                         <a target="_blank" href="https://ghori.me/SpeakingBooks/"><span>Speaking Books</span></a>
-                        <a target="_blank" href="https://github.com/yashghori/SpeakingBooks"><i class="fab fa-github"></i></a>
+                        <a target="_blank" href="https://github.com/yashghori/SpeakingBooks"><i
+                                class="fab fa-github"></i></a>
                     </div>
                 </div>
                 <!-- contact item end -->
@@ -375,12 +387,13 @@
                 <div class="contact-item">
                     <div class="contact-item-inner outer-shadow">
                         <a target="_blank" href="https://ghori.me/Responsive_website/"><span>My Food</span></a>
-                        <a target="_blank" href="https://github.com/yashghori/Responsive_website"><i class="fab fa-github"></i></a>
+                        <a target="_blank" href="https://github.com/yashghori/Responsive_website"><i
+                                class="fab fa-github"></i></a>
                     </div>
                 </div>
                 <!-- contact item end -->
-                </div>
             </div>
+        </div>
     </section>
     <!-- projects section end -->
 
@@ -444,12 +457,13 @@
     </div>
 
     <footer class="footer-section outer-shadow">
-        <div class="p">Designed and Managed by <a target="_blank" href="https://www.linkedin.com/in/yash-ghori-1b984a1b1/">Yash Ghori</a></div>
+        <div class="p">Designed and Managed by <a target="_blank"
+                href="https://www.linkedin.com/in/yash-ghori-1b984a1b1/">Yash Ghori</a></div>
         <div class="social-links">
-            <a target="_blank" href="https://www.instagram.com/_.oyeyash._/"
-                class="outer-shadow hover-in-shadow"><i class="fab fa-instagram"></i></a>
-            <a target="_blank" href="https://twitter.com/YashGhori3?s=09"
-                class="outer-shadow hover-in-shadow"><i class="fab fa-twitter"></i></a>
+            <a target="_blank" href="https://www.instagram.com/_.oyeyash._/" class="outer-shadow hover-in-shadow"><i
+                    class="fab fa-instagram"></i></a>
+            <a target="_blank" href="https://twitter.com/YashGhori3?s=09" class="outer-shadow hover-in-shadow"><i
+                    class="fab fa-twitter"></i></a>
             <a target="_blank" href="https://www.linkedin.com/in/yash-ghori-1b984a1b1/"
                 class="outer-shadow hover-in-shadow"><i class="fab fa-linkedin-in"></i></a>
             <a target="_blank" href="https://github.com/yashghori" class="outer-shadow hover-in-shadow"><i
@@ -460,6 +474,31 @@
     <!-- style switcher end -->
 
     <script src="script.js"></script>
+    <!-- jQuery CDN link -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+
+    <script>
+        $(document).ready(function(){
+            $(window).scroll(function(){
+                if($(window).scrollTop() > 300){
+                    $(".scroll-up").css({
+                        "opacity": "9999999999999999999999999999",
+                        "pointer-events": "auto"
+                    });
+                }else{
+                    $(".scroll-up").css({
+                        "opacity": "0",
+                        "pointer-events": "none"
+                    });
+                }
+            });
+            $(".scroll-up").click(function(){
+                $("html").animate({scrollTop:0},100);
+            });
+        });
+    </script>
 </body>
 
 </html>

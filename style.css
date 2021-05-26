@@ -786,9 +786,46 @@ ul {
   padding: 20px 0;  
   color: var(--text-black-600);
 }
+.footer-section .p{
+  text-align: center;
+}
 .footer-section .p a{
   color: var(--text-black-600);
   line-height: 40px;
   border-bottom: 1px solid var(--text-black-600);
 }
 /* footer end */
+
+/* scrollUp start */
+.scroll-up{
+  /* background-color: var(--for-switcher); */
+  background: var(--for-switcher);
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(3.5px);
+
+
+  height: 40px;
+  width: 40px;
+  bottom: 30px;
+  right: 25px;
+  position: fixed;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  pointer-events: none;
+  opacity: 0;
+}
+.scroll-up:hover{
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  bottom: 42px;
+}
+.scroll-up::after{
+  border-radius: 50%;
+}
+.scroll-up i{
+  font-size: 35px;
+  color: var(--skin-color);
+}
+/* scrollUp end */
