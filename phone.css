@@ -86,6 +86,10 @@
     right: auto;
     width: 20px;
   }
+  .scroll-up{
+    bottom: 45px;
+  }
+  
 }
 
 @media (max-width: 650px) {
