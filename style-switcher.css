@@ -11,7 +11,6 @@
   transform: translateX(100%);
 
   /* glassmorphism */
-  /* background: var(--text-black-700); */
   background: var(--for-switcher);
   backdrop-filter: blur(3.5px);
   -webkit-backdrop-filter: blur(3.5px);
@@ -19,6 +18,9 @@
 }
 .style-switcher.open {
   transform: translateX(-15px);
+}
+.style-switcher.hide {
+  transform: translateX(0);
 }
 .style-switcher .s-icon {
   position: absolute;

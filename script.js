@@ -44,12 +44,27 @@ window.addEventListener("scroll", () => {
     document.querySelector(".style-switcher").classList.remove("open");
   }
 })
+// hode switcher when click outside of it
+document.addEventListener("click",(event)=>{
+  // if user click inside do nothing
+  if(event.target.closest(".style-switcher")){
+    return;
+  }else{
+    document.querySelector(".style-switcher").classList.remove("open");
+  }
+  // if user click outside hide switcher
+
+
+})
 
 // theme color
 const alternateStyle = document.querySelectorAll(".alternate-style")
 function setActiveStyle(color) {
   localStorage.setItem("color", color);
   changeColor();
+
+  // close switcher when user selct thr color
+  document.querySelector(".style-switcher").classList.remove("open");
 
 }
 
