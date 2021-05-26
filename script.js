@@ -45,16 +45,13 @@ window.addEventListener("scroll", () => {
   }
 })
 // hode switcher when click outside of it
-document.addEventListener("click",(event)=>{
+document.addEventListener("click", (event) => {
   // if user click inside do nothing
-  if(event.target.closest(".style-switcher")){
+  if (event.target.closest(".style-switcher")) {
     return;
-  }else{
+  } else {
     document.querySelector(".style-switcher").classList.remove("open");
   }
-  // if user click outside hide switcher
-
-
 })
 
 // theme color
@@ -81,7 +78,7 @@ function changeColor() {
 // first we check color key exist??
 if (localStorage.getItem("color") !== null) {
   changeColor()
-} 
+}
 
 // theme light and dark mode
 const dayNight = document.querySelector(".day-night")
@@ -97,16 +94,16 @@ dayNight.addEventListener("click", () => {
 
 function themeMode() {
   // again just checking if key is present or not
-  if (localStorage.getItem("theme") !== null ) {
-    
-    if (localStorage.getItem("theme") === "light" ) {
+  if (localStorage.getItem("theme") !== null) {
+
+    if (localStorage.getItem("theme") === "light") {
       document.body.classList.remove("dark")
-      
-    }else{
+
+    } else {
       document.body.classList.add("dark")
-      
+
     }
-    
+
   }
   updateIcon();
 }

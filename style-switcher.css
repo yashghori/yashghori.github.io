@@ -14,13 +14,9 @@
   background: var(--for-switcher);
   backdrop-filter: blur(3.5px);
   -webkit-backdrop-filter: blur(3.5px);
- 
 }
 .style-switcher.open {
   transform: translateX(-15px);
-}
-.style-switcher.hide {
-  transform: translateX(0);
 }
 .style-switcher .s-icon {
   position: absolute;
@@ -36,7 +32,6 @@
   transition: all 0.3s ease;
   border-radius: 50%;
 
- 
   background: var(--for-switcher);
   backdrop-filter: blur(3.5px);
   -webkit-backdrop-filter: blur(3.5px);
@@ -88,4 +83,28 @@
 .style-switcher .color-5 {
   background-color: #cc3a3b;
 }
+.project-tab{
+  top: -57%;
+}
 
+
+.project{
+  position: fixed;
+  opacity: 546541545646546;
+  top: 21px;
+  right: 25px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: var(--for-switcher);
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+.project a{
+  color:var(--text-black-900);
+  text-align: center;
+  line-height: 1.99999;
+}
+.project a i{
+
+}

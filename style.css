@@ -109,7 +109,6 @@ body.dark{
 .header {
   padding: 20px 15px;
   position: absolute;
-  width: 100%;
   top: 0;
   left: 0;
   z-index: 100;
@@ -191,9 +190,6 @@ body.dark{
 .row {
   display: flex;
   flex-wrap: wrap;
-}
-.justify-con {
-  justify-content: space-between;
 }
 ul {
   list-style: none;
@@ -788,10 +784,12 @@ ul {
 }
 .footer-section .p{
   text-align: center;
+  font-size: 15px;
 }
 .footer-section .p a{
+  font-size: 15px;
   color: var(--text-black-600);
-  line-height: 40px;
+  line-height: 30px;
   border-bottom: 1px solid var(--text-black-600);
 }
 /* footer end */

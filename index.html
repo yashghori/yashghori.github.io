@@ -44,19 +44,6 @@
                 <div class="logo">
                     <a href="index.html">G</a>
                 </div>
-                <div class="box">
-
-                    <div class="item toggle-btn">
-                        <ul class="nav-item ">
-                            <li class="outer-shadow hover-in-shadow"><a href="#">Home</a></li>
-                            <li class="outer-shadow hover-in-shadow"><a href="#">Projects</a></li>
-                        </ul>
-                    </div>
-                    <!-- <div onclick="toggle()" class="hambueger outer-shadow hover-in-shadow">
-                        <span></span>
-                    </div> -->
-
-                </div>
             </div>
         </div>
     </header>
@@ -357,7 +344,7 @@
 
 
     <!-- projects section start -->
-    <section class="section contact-section">
+    <section id="project-section" class="section contact-section">
         <div class="container">
             <div class="row">
                 <div class="section-title">
@@ -441,11 +428,12 @@
     <!-- style switcher start -->
     <div class="style-switcher">
         <div class="style-switcher-toggler s-icon">
-            <i class="fas fa-cog fa-spin"></i>
+           <i class="fas fa-cog fa-spin"></i>
         </div>
         <div class="day-night s-icon">
             <i class="fas"></i>
         </div>
+        
         <h4>Theme colors</h4>
         <div class="colors">
             <span class="color-1" onclick="setActiveStyle('color-1')"></span>
@@ -454,6 +442,9 @@
             <span class="color-4" onclick="setActiveStyle('color-4')"></span>
             <span class="color-5" onclick="setActiveStyle('color-5')"></span>
         </div>
+    </div>
+    <div class="project icon">
+        <a href="#project-section"><i class="fas fa-tasks"></i></a>
     </div>
 
     <footer class="footer-section outer-shadow">
@@ -480,22 +471,22 @@
 
 
     <script>
-        $(document).ready(function(){
-            $(window).scroll(function(){
-                if($(window).scrollTop() > 300){
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                if ($(window).scrollTop() > 300) {
                     $(".scroll-up").css({
                         "opacity": "9999999999999999999999999999",
                         "pointer-events": "auto"
                     });
-                }else{
+                } else {
                     $(".scroll-up").css({
                         "opacity": "0",
                         "pointer-events": "none"
                     });
                 }
             });
-            $(".scroll-up").click(function(){
-                $("html").animate({scrollTop:0},100);
+            $(".scroll-up").click(function () {
+                $("html").animate({ scrollTop: 0 }, 100);
             });
         });
     </script>
