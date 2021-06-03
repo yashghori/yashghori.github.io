@@ -120,25 +120,10 @@ function updateIcon() {
 
   }
 }
-
-
-
-
-// window.addEventListener("load", () => {
-//   if (document.body.classList.contains("dark")) {
-//     dayNight.querySelector("i").classList.add("fa-sun");
-
-//   } else {
-//     dayNight.querySelector("i").classList.add("fa-moon");
-
-//   }
-// })
-
 // boom guys .. preloader dissapear
 window.addEventListener("load", () => {
   document.querySelector(".preloader").classList.add("fade-out");
   setTimeout(() => {
     document.querySelector(".preloader").style.display = "none";
-
   }, 600);
 })
