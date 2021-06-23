@@ -9,6 +9,7 @@
   font-family: "Montserrat", sans-serif;
   user-select: none;
   scroll-behavior: smooth;
+  scrollbar-width: none;
 }
 body {
   background-color: var(--bg-black-50);
@@ -826,3 +827,6 @@ ul {
   color: var(--skin-color);
 }
 /* scrollUp end */
+::-webkit-scrollbar {
+  display: none;
+}
