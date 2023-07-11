@@ -85,12 +85,18 @@ if (localStorage.getItem("color") !== null) {
 
 // theme light and dark mode
 const dayNight = document.querySelector(".day-night");
+const hideWhiteColor = document.querySelector("#specialSpan");
+let isWhite;
 dayNight.addEventListener("click", () => {
   document.body.classList.toggle("dark");
   if (document.body.classList.contains("dark")) {
     localStorage.setItem("theme", "dark");
+    hideWhiteColor.style.display = "inline-block";
   } else {
     localStorage.setItem("theme", "light");
+    hideWhiteColor.style.display = "none";
+    localStorage.setItem("color", "color-1");
+    changeColor();
   }
   updateIcon();
 });
