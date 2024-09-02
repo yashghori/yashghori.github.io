@@ -130,3 +130,61 @@ window.addEventListener("load", () => {
     document.querySelector(".preloader").style.display = "none";
   }, 600);
 });
+
+// get today date
+function getTodayDate() {
+  const today = new Date();
+
+  const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-based, so we add 1
+  const day = String(today.getDate()).padStart(2, '0');
+  const year = String(today.getFullYear()); // Get the last two digits of the year
+
+  return `${day}/${month}/${year}`;
+}
+const todayDate = getTodayDate();
+console.log(todayDate, 'today');
+
+// calculate experiance 
+function calculateDuration(startDate, endDate) {
+  // Parse the input dates
+  const [startDay, startMonth, startYear] = startDate.split('/').map(Number);
+  const [endDay, endMonth, endYear] = endDate.split('/').map(Number);
+
+  // Create Date objects for start and end dates
+  const start = new Date(startYear, startMonth - 1, startDay);
+  const end = new Date(endYear, endMonth - 1, endDay);
+
+  // Calculate the difference in years and months
+  let years = end.getFullYear() - start.getFullYear();
+  let months = end.getMonth() - start.getMonth();
+
+  // Adjust if the end month is earlier in the year than the start month
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
+
+  // Adjust for days (if end day is earlier in the month than the start day)
+  if (end.getDate() < start.getDate()) {
+    months--;
+    if (months < 0) {
+      years--;
+      months += 12;
+    }
+  }
+  if (years) {
+    return `${years} yr${years !== 1 ? 's' : ''} ${months} mon${months !== 1 ? 's' : ''}`;    
+  }else{
+    return `${months} mon${months !== 1 ? 's' : ''}`;    
+  }
+
+}
+
+// Example usage:
+const experienceOfAsite = calculateDuration("01/02/2023", todayDate.toString());
+const experienceOfFrshr = calculateDuration("01/11/2021","01/04/2022");
+const experienceOfWhisttler = calculateDuration("01/07/2021", "01/12/2021");
+
+console.log(experienceOfAsite, 'asite');
+console.log(experienceOfFrshr);
+console.log(experienceOfWhisttler);
