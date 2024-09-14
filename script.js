@@ -180,11 +180,20 @@ function calculateDuration(startDate, endDate) {
 
 }
 
-// Example usage:
-const experienceOfAsite = calculateDuration("01/02/2023", todayDate.toString());
-const experienceOfFrshr = calculateDuration("01/11/2021","01/04/2022");
-const experienceOfWhisttler = calculateDuration("01/07/2021", "01/12/2021");
+// Function to set duration text for a given class and experience
+function setDuration(className, experience) {
+  const element = document.querySelector(className);
+  if (element) {
+    element.innerHTML = `( ${experience} )`;
+  }
+}
 
-console.log(experienceOfAsite, 'asite');
-console.log(experienceOfFrshr);
-console.log(experienceOfWhisttler);
+// Calculating experiences
+const experienceOfAsite = calculateDuration("01/02/2023", todayDate.toString());
+const experienceOfWhisttler = calculateDuration("01/12/2021", "30/04/2022");
+const experienceOfFrshr = calculateDuration("01/07/2021", "31/12/2021");
+
+// Setting the text content
+setDuration(".asite-duration", experienceOfAsite);
+setDuration(".whisttler-duration", experienceOfWhisttler);
+setDuration(".frshr-duration", experienceOfFrshr);
