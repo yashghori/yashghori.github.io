@@ -541,14 +541,14 @@ ul {
   padding: 15px;
   flex: 0 0 60%;
 }
-.about-section .about-info a {
+.about-section .about-info .company-name {
   font-size: 15px;
   color: var(--text-black-600);
   line-height: 30px;
   border-bottom: 1px solid var(--text-black-600);
 }
-.company-details{
-  /* display: flex; */
+.about-section .about-info .download-cv{
+  font-size: 15px;
 }
 .company-details img{
   width: 30px;
