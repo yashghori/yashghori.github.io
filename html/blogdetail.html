@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +21,47 @@
     <script src="https://kit.fontawesome.com/d9361e7e09.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
+
 <body class="dark">
+    <!-- header start -->
+    <header class="header">
+        <div class="container">
+            <div class="row justify-con">
+                <div class="logo">
+                    <a href="/index.html">G</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header end -->
+
+
+    <!-- Blogs section start -->
+    <section id="project-section" class="section contact-section blog-section">
+        <div class="container"> 
+            <div class="row blogDetails-container">
+                 <h2 id="blogTitle" class="blogdetil-title"></h2>
+            </div>
+            <div class="blogdetail-auther">
+                <img src="" id="authImage" alt="" class="blog-image">
+                <div class="auth-meta">
+                    <span class="blog-auth-name" id="blogAuth"></span>
+                    <span id="blogDate"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Blogs section end -->
+
+    <div class="blog-post-container">
+        <h1 id="blogTitle">Blog Title</h1>
+        <div class="blog-meta">
+            <img id="blogImage" src="" alt="Topic Image" class="blog-image">
+            <p id="blogDate">Date</p>
+        </div>
+        <pre id="blogContent">Blog content will appear here...</pre>
+    </div>
+
     <!-- scroll up button start -->
     <div class="scroll-up">
         <i class="fas fa-caret-up"></i>
@@ -35,35 +76,6 @@
         </div>
     </div>
     <!-- preloader end-->
-    <!-- header start -->
-    <header class="header">
-        <div class="container">
-            <div class="row justify-con">
-                <div class="logo">
-                    <a href="/index.html">G</a>
-                </div>
-            </div>
-        </div>
-    </header>    
-    <!-- header end -->
-
-    <!-- Blogs section start -->
-    <section id="project-section" class="section contact-section">
-        <div class="container">
-            <div class="row">
-                <div class="section-title">
-                    <h2 data-heading="Blogs">Dev Diaries</h2>
-                </div>
-            </div>
-            <div class="row blog-container">
-                <!-- content will add by JS -->
-            </div>
-        </div>
-    </section>
-    <!-- Blogs section end -->
-
-
-
 
     <div class="style-switcher">
         <div class="style-switcher-toggler s-icon">
@@ -71,7 +83,7 @@
         </div>
         <div class="day-night s-icon">
             <i class="fas"></i>
-        </div>
+        </div>  
         <a href="blogs.html">
             <div class="blogs s-icon">
                 <i class="fas fa-solid fa-blog"></i>
@@ -91,7 +103,7 @@
     <div class="project icon">
         <a href="/index.html#project-section"><i class="fas fa-tasks"></i></a>
     </div>
-
+    
     <script src="../js/shared.js"></script>
     <script src="../js/blogs.js" type="module"></script>
     <!-- jQuery CDN link -->
@@ -119,5 +131,9 @@
             });
         });
     </script>
+
+    <script src="../js/blogdetail.js"></script> <!-- Your JS file -->
+    <script src="../js/shared.js"></script> <!-- Your JS file -->
 </body>
+
 </html>

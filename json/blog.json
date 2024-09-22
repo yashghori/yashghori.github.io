@@ -1,19 +1,21 @@
 [
     {
         "id" : 1,
-        "title" : "Angular new features @if, @for ...",
-        "description" : "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut",
+        "title" : "Unlocking Angular's Potential: Why You Should Use @for and @if for Smarter Templating",
+        "description" : "et <i>bold</i>sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut",
         "postdate" : "21 jan 2024",
-        "userImage" : "",
-        "topiclogo" : ""
+        "userImage": "../assets/IMG_20230207_210921_289.jpg",
+        "topiclogo": "../assets/asite_logo.jpeg",
+        "auther":"Yash Ghori"
     },
     {
-        "id" : 1,
-        "title" : "Angular new features @if, @for ...",
+        "id" : 2,
+        "title" : "Unlocking Angular's Potential: Why You Should Use @for and @if for Smarter Templating",
         "description" : "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut",
         "postdate" : "21 jan 2024",
-        "userImage" : "",
-        "topiclogo" : ""
+        "userImage": "../assets/IMG_20230207_210921_289.jpg",
+        "topiclogo": "../assets/asite_logo.jpeg",
+        "auther": "Yash Ghori"
     }
 ]
 
