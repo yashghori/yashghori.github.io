@@ -1,4 +1,3 @@
-// Use fetch to get the JSON file
 fetch('../json/blog.json')
     .then(response => {
         if (!response.ok) {
@@ -21,15 +20,36 @@ fetch('../json/blog.json')
 
         // If the blog exists, display it
         if (blog) {
-            document.getElementById('blogTitle').innerText = blog.title;
+            // Set the title and date
+            document.getElementById('blogTitle').innerText = blog.content.find(c => c.type === 'text').value;
             document.getElementById('blogDate').innerText = blog.postdate;
-            document.getElementById('blogContent').innerHTML = blog.description;
-            document.getElementById('blogImage').src = blog.topiclogo;
-            document.getElementById('authImage').src = blog.userImage;
+
+            // Display the content dynamically (text and image alternation)
+            const blogContentContainer = document.getElementById('blogContent');
+            blogContentContainer.innerHTML = ''; // Clear existing content if any
+
+            blog.content.forEach(contentItem => {
+                if (contentItem.type === 'text') {
+                    // Create and append a text element
+                    const textElement = document.createElement('p');
+                    textElement.innerHTML = contentItem.value;
+                    blogContentContainer.appendChild(textElement);
+                } else if (contentItem.type === 'image') {
+                    // Create and append an image element
+                    const imageElement = document.createElement('img');
+                    imageElement.src = contentItem.value;
+                    imageElement.alt = 'Blog image';
+                    imageElement.style.width = '100%'; // Adjust the width if necessary
+                    blogContentContainer.appendChild(imageElement);
+                }
+            });
+
+            // Set the author and images
+            document.getElementById('authImage').src = blog.content.find(c => c.type === 'image').value;
             document.getElementById('blogAuth').innerText = blog.auther;
         } else {
             document.getElementById('blogTitle').innerText = "Blog not found";
             document.getElementById('blogContent').innerText = "The blog you are looking for does not exist.";
-        }     
+        }
     })
     .catch(error => console.error('Error fetching JSON:', error));

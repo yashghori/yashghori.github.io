@@ -1057,6 +1057,16 @@ ul {
 .blog-section .container{
   width: 80%;
 }
+.blog-section .container .blog-post-container img{
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  margin: 1.5rem 0;
+}
+.blog-section .container .blog-post-container p{
+  color: var(--bg-black-900);
+}
 .blog-section .blogdetail-auther{
   margin-top: 1rem;
   display: flex;
