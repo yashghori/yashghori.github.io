@@ -1,0 +1,57 @@
+[
+    {
+        "id": 1,
+        "title": "Unlocking Angular's Potential: Why You Should Use @for and @if for Smarter Templating",
+        "topiclogo": "../assets/IMG_20230207_210921_289.jpg",
+        "description":"et <b>bold</b>sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut",
+        "userImage":"../assets/IMG_20230207_210921_289.jpg",
+        "content": [
+            {
+                "type": "image",
+                "value": "../assets/IMG_20230207_210921_289.jpg"
+            },
+            {
+                "type": "text",
+                "value": "Unlocking Angular's Potential: Why You Should Use @for and @if for Smarter Templating"
+            },
+            {
+                "type": "image",
+                "value": "../assets/asite_logo.jpeg"
+            },
+            {
+                "type": "text",
+                "value": "et <b>bold</b>sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut"
+            }
+        ],
+        "postdate": "21 jan 2024",
+        "auther": "Yash Ghori"
+    },
+    {
+        "id": 2,
+        "title": "Unlocking Angular's Potential: Why You Should Use @for and @if for Smarter Templating",
+        "topiclogo": "../assets/IMG_20230207_210921_289.jpg",
+        "description":"et <b>bold</b>sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut",
+        "userImage":"../assets/IMG_20230207_210921_289.jpg",
+        "content": [
+            {
+                "type": "image",
+                "value": "../assets/IMG_20230207_210921_289.jpg"
+            },
+            {
+                "type": "text",
+                "value": "Unlocking Angular's Potential: Why You Should Use @for and @if for Smarter Templating"
+            },
+            {
+                "type": "image",
+                "value": "../assets/asite_logo.jpeg"
+            },
+            {
+                "type": "text",
+                "value": "et <b>bold</b>sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut"
+            }
+        ],
+        "postdate": "21 jan 2024",
+        "auther": "Yash Ghori"
+    }
+    
+]
