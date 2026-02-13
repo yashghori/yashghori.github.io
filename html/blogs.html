@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/phone.css">
+    <link rel="stylesheet" href="../css/style-switcher.css">
+    
+    <!-- default color skin -->
+    <link rel="stylesheet" href="color/color-1.css">
+    <!-- style switcher -->
+    <link rel="stylesheet" href="../color/color-1.css" class="alternate-style" title="color-1" disabled>
+    <link rel="stylesheet" href="../color/color-2.css" class="alternate-style" title="color-2" disabled>
+    <link rel="stylesheet" href="../color/color-3.css" class="alternate-style" title="color-3" disabled>
+    <link rel="stylesheet" href="../color/color-4.css" class="alternate-style" title="color-4" disabled>
+    <link rel="stylesheet" href="../color/color-5.css" class="alternate-style" title="color-5" disabled>
+    <link rel="stylesheet" href="../color/color-6.css" class="alternate-style" title="color-6" disabled>
+    <script src="https://kit.fontawesome.com/d9361e7e09.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body class="dark">
+    <!-- scroll up button start -->
+    <div class="scroll-up">
+        <i class="fas fa-caret-up"></i>
+    </div>
+    <!-- scroll up button end -->
+    <!-- preloader start-->
+    <div class="preloader">
+        <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- preloader end-->
+    <!-- header start -->
+    <header class="header">
+        <div class="container">
+            <div class="row justify-con">
+                <div class="logo">
+                    <a href="/index.html">G</a>
+                </div>
+            </div>
+        </div>
+    </header>    
+    <!-- header end -->
+
+    <!-- Blogs section start -->
+    <section id="project-section" class="section contact-section">
+        <div class="container">
+            <div class="row">
+                <div class="section-title">
+                    <h2 data-heading="Blogs">Dev Diaries</h2>
+                </div>
+            </div>
+            <div class="row blog-container">
+                <!-- content will add by JS -->
+            </div>
+        </div>
+    </section>
+    <!-- Blogs section end -->
+
+
+
+
+    <div class="style-switcher">
+        <div class="style-switcher-toggler s-icon">
+            <i class="fas fa-cog fa-spin"></i>
+        </div>
+        <div class="day-night s-icon">
+            <i class="fas"></i>
+        </div>
+        <a href="blogs.html">
+            <div class="blogs s-icon">
+                <i class="fas fa-solid fa-blog"></i>
+            </div>
+        </a>
+    
+        <h4>Theme colors</h4>
+        <div class="colors">
+            <span class="color-1" onclick="setActiveStyle('color-1')"></span>
+            <span class="color-2" onclick="setActiveStyle('color-2')"></span>
+            <span class="color-3" onclick="setActiveStyle('color-3')"></span>
+            <span class="color-4" onclick="setActiveStyle('color-4')"></span>
+            <span class="color-5" onclick="setActiveStyle('color-5')"></span>
+            <span id="specialSpan" class="color-6" onclick="setActiveStyle('color-6')"></span>
+        </div>
+    </div>
+    <div class="project icon">
+        <a href="/index.html#project-section"><i class="fas fa-tasks"></i></a>
+    </div>
+
+    <script src="../js/shared.js"></script>
+    <script src="../js/blogs.js" type="module"></script>
+    <!-- jQuery CDN link -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"></script>
+    
+    
+    <script>
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                if ($(window).scrollTop() > 300) {
+                    $(".scroll-up").css({
+                        "opacity": "9999999999999999999999999999",
+                        "pointer-events": "auto"
+                    });
+                } else {
+                    $(".scroll-up").css({
+                        "opacity": "0",
+                        "pointer-events": "none"
+                    });
+                }
+            });
+            $(".scroll-up").click(function () {
+                $("html").animate({ scrollTop: 0 }, 100);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -48,6 +48,9 @@
 .style-switcher .day-night {
   top: 55px;
 }
+.style-switcher .blogs {
+  top: 112px;
+}
 
 .style-switcher h4 {
   color: var(--text-black-700);
@@ -107,4 +110,13 @@
   color:var(--text-black-900);
   text-align: center;
   line-height: 1.99999;
+}
+.fa-tasks:hover:before,
+.fa-moon:hover:before,
+.fa-cog:hover:before,
+.fa-moon:hover:before,
+.fa-blog:hover:before,
+.fa-sun:hover:before{
+  transition: all 0.3s ease;
+  color: var(--skin-color);
 }

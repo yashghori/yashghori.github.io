@@ -6,32 +6,6 @@ function toggle() {
   } else togglee.style.display = "none";
 }
 
-// about section tab
-(() => {
-  const aboutSection = document.querySelector(".about-section"),
-    tabsContainer = document.querySelector(".about-tabs");
-
-  tabsContainer.addEventListener("click", (event) => {
-    if (
-      event.target.classList.contains("tab-item") &&
-      !event.target.classList.contains("active")
-    ) {
-      const target = event.target.getAttribute("data-target");
-      //   deactivate current tab
-      tabsContainer
-        .querySelector(".active")
-        .classList.remove("outer-shadow", "active");
-      //   activate new tab
-      event.target.classList.add("active", "outer-shadow");
-      // hide current content
-      aboutSection
-        .querySelector(".tab-content.active")
-        .classList.remove("active");
-      // active new content
-      aboutSection.querySelector(target).classList.add("active");
-    }
-  });
-})();
 
 // style switcher
 /* ------------------------
