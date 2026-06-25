@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Writing — Yash Ghori</title>
+  <meta name="description" content="Notes on Angular, frontend architecture and performance by Yash Ghori.">
+  <meta name="author" content="Yash Ghori">
+  <link rel="canonical" href="https://ghori.in/blog/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Writing — Yash Ghori">
+  <meta property="og:description" content="Notes on Angular, frontend architecture and performance.">
+  <meta property="og:url" content="https://ghori.in/blog/">
+
+  <link rel="icon" href="/favicon.ico">
+
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (!t) t = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) { }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="/styles/blog.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="/" aria-label="Yash Ghori — home">
+        <img class="nav-avatar" src="/assets/imgg.jpg" alt="Yash Ghori" width="32" height="32">
+        <span>Yash Ghori</span>
+      </a>
+      <nav class="nav-right" aria-label="Primary">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/#experience">Experience</a></li>
+          <li><a href="/#projects">Projects</a></li>
+          <li><a href="/blog/">Writing</a></li>
+        </ul>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle color theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+          </svg>
+        </button>
+        <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false"
+          aria-controls="nav-links">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            aria-hidden="true" width="20" height="20"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <div class="blog-header">
+      <h1>Writing</h1>
+      <p class="lede">Notes on Angular, frontend architecture, performance and the occasional DSA insight.</p>
+    </div>
+    <div class="post-list">
+      <a class="post-card" href="/blog/angular-control-flow.html">
+        <div class="post-card-meta"><time datetime="2026-06-14">June 14, 2026</time><span>1 min read</span></div>
+        <h2 class="post-card-title">Angular's Built-in Control Flow: @if, @for and @switch</h2>
+        <p class="post-card-desc">Why the new block control flow syntax replaces *ngIf and *ngFor — and what it buys you in readability and performance.</p>
+        <div class="post-card-tags"><span class="tag">angular</span><span class="tag">typescript</span><span class="tag">performance</span></div>
+      </a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>© <span id="year"></span> Yash Ghori</span>
+      <span><a href="/">← Home</a></span>
+    </div>
+  </footer>
+
+  <button class="to-top" id="to-top" type="button" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"></path></svg>
+  </button>
+
+  <script src="/scripts/background.js" defer></script>
+  <script src="/scripts/main.js"></script>
+</body>
+
+</html>

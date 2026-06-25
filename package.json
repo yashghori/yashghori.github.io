@@ -1,0 +1,23 @@
+{
+  "name": "yashghori-portfolio",
+  "version": "2.0.0",
+  "description": "Personal portfolio and blog for Yash Ghori — ghori.in",
+  "license": "MIT",
+  "author": "Yash Ghori <yashghori2804@gmail.com>",
+  "homepage": "https://ghori.in",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yashghori/yashghori.github.io.git"
+  },
+  "scripts": {
+    "build": "node build/build-blog.js",
+    "serve": "npx --yes serve .",
+    "dev": "npm run build && npm run serve"
+  },
+  "devDependencies": {
+    "gray-matter": "^4.0.3",
+    "highlight.js": "^11.9.0",
+    "marked": "^12.0.0",
+    "marked-highlight": "^2.2.4"
+  }
+}

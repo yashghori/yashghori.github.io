@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Angular's Built-in Control Flow: @if, @for and @switch — Yash Ghori</title>
+  <meta name="description" content="Why the new block control flow syntax replaces *ngIf and *ngFor — and what it buys you in readability and performance.">
+  <meta name="author" content="Yash Ghori">
+  <link rel="canonical" href="https://ghori.in/blog/angular-control-flow.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Angular's Built-in Control Flow: @if, @for and @switch">
+  <meta property="og:description" content="Why the new block control flow syntax replaces *ngIf and *ngFor — and what it buys you in readability and performance.">
+  <meta property="og:url" content="https://ghori.in/blog/angular-control-flow.html">
+
+  <link rel="icon" href="/favicon.ico">
+
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (!t) t = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) { }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="/styles/blog.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="/" aria-label="Yash Ghori — home">
+        <img class="nav-avatar" src="/assets/imgg.jpg" alt="Yash Ghori" width="32" height="32">
+        <span>Yash Ghori</span>
+      </a>
+      <nav class="nav-right" aria-label="Primary">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/#experience">Experience</a></li>
+          <li><a href="/#projects">Projects</a></li>
+          <li><a href="/blog/">Writing</a></li>
+        </ul>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle color theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+          </svg>
+        </button>
+        <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false"
+          aria-controls="nav-links">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            aria-hidden="true" width="20" height="20"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="post">
+      <a class="post-back" href="/blog/">← Writing</a>
+      <h1 class="post-title">Angular's Built-in Control Flow: @if, @for and @switch</h1>
+      <div class="post-meta">
+        <time datetime="2026-06-14">June 14, 2026</time>
+        <span>1 min read</span>
+      </div>
+      <div class="post-tags"><span class="tag">angular</span><span class="tag">typescript</span><span class="tag">performance</span></div>
+      
+      <div class="prose">
+<p>Angular&#39;s structural directives (<code>*ngIf</code>, <code>*ngFor</code>, <code>*ngSwitch</code>) have served us well, but the
+built-in <strong>block control flow</strong> introduced in v17 is cleaner, faster, and easier to read. Here&#39;s a
+quick tour of how I use it day to day.</p>
+<h2>The new syntax</h2>
+<p>Instead of an <code>*ngIf</code> directive on an element, you write a block directly in the template:</p>
+<pre><code class="hljs language-html">@if (user(); as u) {
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Welcome back, {{ u.name }}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+} @else {
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Please sign in.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+}
+</code></pre><p>Loops read the same way, and <code>track</code> is now <strong>required</strong> — which nudges everyone toward the
+performance win that <code>trackBy</code> used to make optional:</p>
+<pre><code class="hljs language-html">@for (item of items(); track item.id) {
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>{{ item.label }}<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+} @empty {
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Nothing here yet.<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+}
+</code></pre><h2>Why it matters</h2>
+<ul>
+<li><strong>No imports.</strong> Control flow is part of the compiler, so there&#39;s no <code>CommonModule</code> or
+<code>NgIf</code>/<code>NgFor</code> to pull into standalone components.</li>
+<li><strong>Built-in <code>@empty</code>.</strong> The empty-list case is first-class instead of a second <code>@if</code>.</li>
+<li><strong>Faster rendering.</strong> The new <code>@for</code> ships a more efficient diffing algorithm, and mandatory
+<code>track</code> avoids needless DOM churn.</li>
+</ul>
+<h2>Migrating</h2>
+<p>The Angular CLI ships a schematic that rewrites the old directives for you:</p>
+<pre><code class="hljs language-bash">ng generate @angular/core:control-flow
+</code></pre><p>Run it, review the diff, and commit. On a large app I migrated incrementally, one feature module at
+a time, with zero runtime regressions.</p>
+<blockquote>
+<p>Rule of thumb: reach for block control flow in every new template. It&#39;s less code, and the
+required <code>track</code> keeps lists fast by default.</p>
+</blockquote>
+<p>That&#39;s the whole pitch — smaller templates, fewer imports, and performance you get for free.</p>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>© <span id="year"></span> Yash Ghori</span>
+      <span><a href="/blog/">← All writing</a></span>
+    </div>
+  </footer>
+
+  <button class="to-top" id="to-top" type="button" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"></path></svg>
+  </button>
+
+  <script src="/scripts/background.js" defer></script>
+  <script src="/scripts/main.js"></script>
+</body>
+
+</html>

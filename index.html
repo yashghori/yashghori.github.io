@@ -1,748 +1,345 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XEMQPDCRSG"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yash Ghori — Frontend Engineer</title>
+  <meta name="description"
+    content="Yash Ghori — Frontend Engineer and Angular specialist based in Ahmedabad, India. Building fast, accessible web interfaces with Angular, TypeScript, RxJS and SCSS.">
+  <meta name="author" content="Yash Ghori">
+  <link rel="canonical" href="https://ghori.in/">
 
-        gtag('config', 'G-XEMQPDCRSG');
-    </script>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yash Ghori</title>
-    <script src="https://kit.fontawesome.com/d9361e7e09.js" crossorigin="anonymous"></script>
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Yash Ghori — Frontend Engineer">
+  <meta property="og:description" content="Frontend Engineer & Angular specialist. Angular, TypeScript, RxJS, SCSS.">
+  <meta property="og:url" content="https://ghori.in/">
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/phone.css">
-    <link rel="stylesheet" href="css/style-switcher.css">
+  <link rel="icon" href="/favicon.ico">
 
-    <!-- default color skin -->
-    <link rel="stylesheet" href="color/color-1.css">
-    <!-- style switcher -->
-    <link rel="stylesheet" href="color/color-1.css" class="alternate-style" title="color-1" disabled>
-    <link rel="stylesheet" href="color/color-2.css" class="alternate-style" title="color-2" disabled>
-    <link rel="stylesheet" href="color/color-3.css" class="alternate-style" title="color-3" disabled>
-    <link rel="stylesheet" href="color/color-4.css" class="alternate-style" title="color-4" disabled>
-    <link rel="stylesheet" href="color/color-5.css" class="alternate-style" title="color-5" disabled>
-    <link rel="stylesheet" href="color/color-6.css" class="alternate-style" title="color-6" disabled>
+  <!-- Prevent theme flash: set data-theme before first paint -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (!t) t = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) { }
+    })();
+  </script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+
+  <link rel="stylesheet" href="/styles/main.css">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XEMQPDCRSG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XEMQPDCRSG');
+  </script>
 </head>
 
-<body class="dark">
-    <!-- scroll up button start -->
-    <div class="scroll-up">
-        <i class="fas fa-caret-up"></i>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Ambient craft-artifacts background (DSA → UI → code) -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- ===================== Nav ===================== -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="#top" aria-label="Yash Ghori — home">
+        <img class="nav-avatar" src="/assets/imgg.jpg" alt="Yash Ghori" width="32" height="32">
+        <span>Yash Ghori</span>
+      </a>
+
+      <nav class="nav-right" aria-label="Primary">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#work">Work</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="/blog/">Writing</a></li>
+        </ul>
+
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle color theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+          </svg>
+        </button>
+
+        <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false"
+          aria-controls="nav-links">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            aria-hidden="true" width="20" height="20">
+            <path d="M3 6h18M3 12h18M3 18h18"></path>
+          </svg>
+        </button>
+      </nav>
     </div>
-    <!-- scroll up button end -->
-    <!-- preloader start-->
-    <div class="preloader">
-        <div class="box">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
-    <!-- preloader end-->
-    <!-- header start -->
-    <header class="header">
-        <div class="container">
-            <div class="row justify-con">
-                <div class="logo">
-                    <a href="index.html">G</a>
-                </div>
-            </div>
-        </div>
-    </header>
+  </header>
 
-    <!-- header end -->
+  <main id="main">
+    <span id="top"></span>
 
-    <!--  -->
-    <!-- home start -->
-    <section class="section home-section">
-        <!-- effects start -->
-        <div class="effect-wrap">
-            <div class="effect effect-1"></div>
-            <div class="effect effect-2">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <div class="effect effect-3"></div>
-            <div class="effect effect-4"></div>
-            <div class="effect effect-5">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-        </div>
-        <!-- effects end -->
-        <div class="container">
-            <div class="row full-screen align-item-center">
-                <div class="home-text">
-                    <p>Hello</p>
-                    <h1>I'm Yash Ghori</h1>
-                    <h2>Crafting Code, Designing Futures.</h2>
-                    <a href="#about" class="btn-1 outer-shadow hover-in-shadow">More About Me</a>
-                </div>
-                <div class="home-img">
-                    <div class="img-box inner-shadow">
-                        <img src="./assets/IMG_20230207_210921_289.jpg" class="outer-shadow" alt="profilePic" srcset="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- home end -->
+    <!-- ===================== Hero ===================== -->
+    <section class="hero container" aria-labelledby="hero-name">
+      <span class="hero-eyebrow" data-reveal style="--i:0"><span class="dot"></span> Available for frontend roles</span>
+      <h1 id="hero-name" data-reveal style="--i:1">Yash Ghori</h1>
+      <p class="title" data-reveal style="--i:2"><b>Frontend Engineer</b> — Angular Specialist</p>
+      <p class="pitch" data-reveal style="--i:3">
+        I build fast, accessible, maintainable web interfaces. Currently a Software Engineer at
+        Asite, where I lead frontend architecture for enterprise B2B and AEC platforms.
+      </p>
+      <p class="currently" data-reveal style="--i:4">
+        Sharpening fundamentals — actively solving DSA on
+        <a href="https://takeuforward.org/profile/yashghori2804" target="_blank" rel="noopener">TakeUForward</a>.
+      </p>
 
-    <!-- about section start -->
-    <section id="about" class="about-section section">
-        <div class="container">
-            <div class="row">
-                <div class="section-title">
-                    <h2 data-heading="info">About Me</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="about-img">
-                    <div class="img-box inner-shadow">
-                        <img src="assets/imgg.jpg" class="outer-shadow" alt="" srcset="">
-                    </div>
-                    <!-- social links start -->
-                    <div class="social-links">
-                        <!-- <a target="_blank" href="https://www.instagram.com/_.oyeyash._/"
-                            class="outer-shadow hover-in-shadow"><i class="fab fa-instagram"></i></a> -->
-                        <a target="_blank" href="https://twitter.com/YashGhori3?s=09"
-                            class="outer-shadow hover-in-shadow"><i class="fab fa-twitter"></i></a>
-                        <a target="_blank" href="https://www.linkedin.com/in/yash-ghori-1b984a1b1/"
-                            class="outer-shadow hover-in-shadow"><i class="fab fa-linkedin-in"></i></a>
-                        <a target="_blank" href="https://github.com/yashghori" class="outer-shadow hover-in-shadow"><i
-                                class="fab fa-github"></i></a>
-                    </div>
-                    <!-- social links end -->
-
-                </div>
-                <div class="about-info">
-                    <p><span>Hi! I'm Yash Ghori.</span> an Associate Software Engineer with over 2 years of experience at <a class="company-name" target="_blank" href="https://www.linkedin.com/company/asite/">Asite</a>. I thrive on transforming complex problems into efficient, scalable software, drawing on my deep expertise in Data
-                    Structures and Algorithms (DSA).</p>
-                    <p>I’m not just about writing code; I’m about creating impactful experiences that resonate with users and drive success for
-                    businesses. Always eager to learn and adapt, I bring fresh perspectives and cutting-edge solutions to every project I
-                    take on.</p>
-                    <!-- <p>Ready to turn ideas into reality? Let’s make it happen. Discover more at ghori.in.</p> -->
-                    <a href="/assets/YashGhoriASE-I.pdf" class="btn-1 outer-shadow hover-in-shadow download-cv">Download CV</a>
-                </div>
-            </div>
-            <!-- about tabs start -->
-            <div class="row">
-                <div class="about-tabs">
-                    <span class="tab-item active outer-shadow" data-target=".experience">experience</span>
-                    <span class="tab-item" data-target=".skills">skills</span>
-                    <span class="tab-item" data-target=".education">education</span>
-                </div>
-            </div>
-            <!-- about tabs end -->
-
-
-            <!--Experiance  start -->
-            <div class="row">
-                <div class="experience tab-content active">
-                    <div class="row">
-                        <div class="timeline">
-                            <div class="row">
-                                <!-- timeline item start -->
-                                <div class="timeline-item">
-                                    <div class="timeline-item-inner outer-shadow">
-                                        <i class="fas fa-briefcase icon"></i>
-                                        <div class="company-details">
-                                            <img src="assets/asite_logo.jpeg" alt="">
-                                            <span><a href="https://www.linkedin.com/company/asite/" target="_blank">Asite</a> </span>
-                                        </div>
-                                        <h4>Asite Supplier Relationship Management</h4>
-                                        <div class="exp-yr">                                            
-                                            <h4>Feb 2023 - Present</h4>
-                                            <h4 class="asite-duration"></h4>
-                                        </div>
-                                        <p>Building on a solid platform, supply chains come together on capital projects to deliver assets which are then operated
-                                        and maintained.</p>
-                                    </div>
-                                </div>
-                                <!-- timeline item end -->
-                                <!-- timeline item start -->
-                                <div class="timeline-item">
-                                    <div class="timeline-item-inner outer-shadow">
-                                        <i class="fas fa-briefcase icon"></i>
-                                        <div class="company-details">
-                                            <img src="assets/whisttler_logo.jpeg" alt="">
-                                            <span> <a href="https://www.linkedin.com/company/whisttler/" target="_blank">Whisttler, the influencer marketing company</a></span>
-                                        </div>
-                                        <h4>Frontend Developer</h4>
-                                        <div class="exp-yr">
-                                            <h4>Dec 2021 - Apr 2022</h4>
-                                            <h4 class="whisttler-duration"></h4>
-                                        </div>
-                                        <p>At Whisttler we are the team you need to overcharge your influencer marketing 🎉Total >745 mn reach delivered 🙌🏼.</p>
-                                    </div>
-                                </div>
-                                <!-- timeline item end -->
-                                <!-- timeline item start -->
-                                <div class="timeline-item">
-                                    <div class="timeline-item-inner outer-shadow">
-                                        <i class="fas fa-briefcase icon"></i>
-                                        <div class="company-details">
-                                            <img src="assets/frshr-logo.jpeg" alt="">
-                                            <span> <a href="https://www.linkedin.com/company/frshrtechnologies/" target="_blank">Frshr Technologies</a></span>
-                                        </div>
-                                        <h4>Frontend Developer</h4>
-                                        <div class="exp-yr">
-                                            <h4>Jul 2021 - Dec 2021</h4>
-                                            <h4 class="frshr-duration"></h4>
-                                        </div>
-                                        <p>At Frshr Technologies, we believe in realizing dreams. Dreams of beautiful products, dreams of ecstatic users and dreams
-                                        of your success.</p>
-                                    </div>
-                                </div>
-                                <!-- timeline item end -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Experiance end -->
-
-            <!-- skills bar start -->
-            <div class="row">
-                <div class="skills tab-content">
-                    <div class="row">
-                        <!-- one skill start -->
-                        <div class="skills-item">
-                            <p>Angular</p>
-                            <div class="progress inner-shadow">
-                                <div class="progress-bar" style="width: calc(90% - 14px);">
-                                    <span>90%</span>
-                                </div>
-
-                            </div>
-                        </div>
-                        <!-- one skill end -->
-                        <!-- one skill start -->
-                        <div class="skills-item">
-                            <p>React Js</p>
-                            <div class="progress inner-shadow">
-                                <div class="progress-bar" style="width: calc(90% - 14px);">
-                                    <span>90%</span>
-                                </div>
-
-                            </div>
-                        </div>
-                        <!-- one skill end -->
-                        <!-- one skill start -->
-                        <div class="skills-item">
-                            <p>SCSS</p>
-                            <div class="progress inner-shadow">
-                                <div class="progress-bar" style="width: calc(90% - 14px);">
-                                    <span>90%</span>
-                                </div>
-
-                            </div>
-                        </div>
-                        <!-- one skill end -->
-                        <!-- one skill start -->
-                        <div class="skills-item">
-                            <p>HTML</p>
-                            <div class="progress inner-shadow">
-                                <div class="progress-bar" style="width: calc(90% - 14px);">
-                                    <span>90%</span>
-                                </div>
-
-                            </div>
-                        </div>
-                        <!-- one skill end -->
-                        <!-- one skill start -->
-                        <div class="skills-item">
-                            <p>CSS</p>
-                            <div class="progress inner-shadow">
-                                <div class="progress-bar" style="width: calc(90% - 14px);">
-                                    <span>90%</span>
-                                </div>
-
-                            </div>
-                        </div>
-                        <!-- one skill end -->
-                        <!-- one skill start -->
-                        <div class="skills-item">
-                            <p>JavaScript</p>
-                            <div class="progress inner-shadow">
-                                <div class="progress-bar" style="width: calc(85% - 14px);">
-                                    <span>85%</span>
-                                </div>
-
-                            </div>
-                        </div>
-                        <!-- one skill end -->
-                        <!-- one skill Start -->
-                        <div class="skills-item">
-                            <p>c++</p>
-                            <div class="progress inner-shadow">
-                                <div class="progress-bar" style="width: calc(80% - 14px);">
-                                    <span>80%</span>
-                                </div>
-
-                            </div>
-                        </div>
-                        <!-- one skill end -->
-                        <!-- one skill Start -->
-                        <div class="skills-item">
-                            <p>DSA</p>
-                            <div class="progress inner-shadow">
-                                <div class="progress-bar" style="width: calc(70% - 14px);">
-                                    <span>70%</span>
-                                </div>
-
-                            </div>
-                        </div>
-                        <!-- one skill end -->
-                    </div>
-                </div>
-
-            </div>
-
-
-            <!-- skills bar end -->
-            <!--education  start -->
-            <div class="row">
-                <div class="education tab-content">
-                    <div class="row">
-                        <div class="timeline">
-                            <div class="row">
-                                <!-- timeline item start -->
-                                <div class="timeline-item">
-                                    <div class="timeline-item-inner outer-shadow">
-                                        <i class="fas fa-graduation-cap icon"></i>
-                                        <div class="company-details">
-                                            <img src="assets/bvm-logo.jpeg" alt="">
-                                            <span><a href="https://www.linkedin.com/school/birlavishvakarmamahavidyalaya/" target="_blank">Birla Vishvakarma Mahavidyalaya ( IT )</a> </span>
-                                        </div>
-                                        <h4>B Tech, IT</h4>
-                                        <div class="exp-yr">
-                                            <h4>2019 - 2023</h4>
-                                        </div>
-                                        <p>BVM has made its mark nationally and internationally by developing learners
-                                            with passion and commitment to work in a global environment.</p>
-                                    </div>
-                                </div>
-                                <!-- timeline item end -->
-                                <!-- timeline item start -->
-                                <div class="timeline-item">
-                                    <div class="timeline-item-inner outer-shadow">
-                                        <i class="fas fa-graduation-cap icon"></i>
-                                        <div class="company-details">
-                                            <img src="assets/gurukul-logo.jpeg" alt="">
-                                            <span>Shree Swaminarayan Gurukul</span>
-                                        </div>
-                                        <h4>Science</h4>
-                                        <div class="exp-yr">
-                                            <h4>2017 - 2019</h4>
-                                        </div>
-                                        <h4></h4>
-                                        <p>'Where tradition and vision meet' apply describes the philosophy upon which
-                                            Shree Swaminarayan Gurukul Campus bases the design of education it offers
-                                            for its students.</p>
-                                    </div>
-                                </div>
-                                <!-- timeline item end -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- education end -->
-        </div>
-    </section>
-    <!-- about section end -->
-
-    <!-- services section start -->
-    <section class="service-section section">
-        <div class="container">
-            <div class="row">
-                <div class="section-title">
-                    <h2 data-heading="services">What i do</h2>
-                </div>
-            </div>
-            <div class="row">
-                <!-- services item start -->
-                <div class="service-item">
-                    <div class="service-item-inner outer-shadow">
-                        <div class="icon inner-shadow">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h3>Responsive Design</h3>
-                        <p>Almost every new client these days wants a mobile version of their website</p>
-                    </div>
-                </div>
-                <!-- services item end -->
-                <!-- services item start -->
-                <div class="service-item">
-                    <div class="service-item-inner outer-shadow">
-                        <div class="icon inner-shadow">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
-                        <h3>Web Design</h3>
-                        <p>Web design refers to the design of websites that are displayed on the internet. </p>
-                    </div>
-                </div>
-                <!-- services item end -->
-                <!-- services item start -->
-                <div class="service-item">
-                    <div class="service-item-inner outer-shadow">
-                        <div class="icon inner-shadow">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h3>Clean code</h3>
-                        <p> Especially if you work on code that is read by more than just you, it's very, very useful.
-                        </p>
-                    </div>
-                </div>
-                <!-- services item end -->
-                <!-- services item start -->
-                <!-- <div class="service-item">
-                    <div class="service-item-inner outer-shadow">
-                        <div class="icon inner-shadow">
-                            <i class="fas fa-bullhorn"></i>
-                        </div>
-                        <h3>Great Support</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, quam?</p>
-                    </div>
-                </div> -->
-                <!-- services item end -->
-            </div>
-        </div>
-    </section>
-    <!-- service section end -->
-
-
-    <!-- projects section start -->
-    <section id="project-section" class="section contact-section">
-        <div class="container">
-            <div class="row">
-                <div class="section-title">
-                    <h2 data-heading="work">projects</h2>
-                </div>
-            </div>
-            <div class="row">
-                <!-- contact item start -->
-                <div class="contact-item">
-                    <div class="contact-item-inner outer-shadow">
-                        <a target="_blank" href="https://whisttler.com/"><span>whisttler : Influencer
-                                Marketing</span></a>
-                        <a target="_blank">
-                            <i class="fab fa-html5 tooltip">
-                                <span class="tooltiptext">HTML</span>
-                            </i>
-                        </a>
-                        <a target="_blank">
-                            <i class="fab fa-css3-alt tooltip">
-                                <span class="tooltiptext">CSS</span>
-                            </i>
-                        </a>
-                        <a target="_blank">
-                            <i class="fab fa-js tooltip">
-                                <span class="tooltiptext">JavaScript</span>
-                            </i>
-                        </a>
-                        <a target="_blank">
-                            <i class="fab fa-python tooltip">
-                                <span class="tooltiptext">Python</span>
-                            </i>
-                        </a>
-                        <a target="_blank">
-                            <i class="fab fa-wordpress-simple tooltip">
-                                <span class="tooltiptext">Wordpress</span>
-                            </i>
-                        </a>
-
-                    </div>
-                </div>
-                <!-- contact item end -->
-                <!-- contact item start -->
-                <div class="contact-item">
-                    <div class="contact-item-inner outer-shadow">
-                        <a target="_blank" href="https://commonplace.sa/"><span>Commonplace Studio</span></a>
-                        <a target="_blank">
-                            <i class="fab fa-react tooltip">
-                                <span class="tooltiptext">React Js</span>
-                            </i>
-                        </a>
-                        <a target="_blank">
-                            <i class="fab fa-sass tooltip">
-                                <span class="tooltiptext">Sass</span>
-                            </i>
-                        </a>
-                    </div>
-                </div>
-                <!-- contact item end -->
-                <!-- contact item start -->
-                <div class="contact-item">
-                    <div class="contact-item-inner outer-shadow">
-                        <a target="_blank" href="https://murlidharprinters.com/"><span>Murlidharprinters</span></a>
-                        <a target="_blank">
-                            <i class="fab fa-react tooltip">
-                                <span class="tooltiptext">React Js</span>
-                            </i>
-                        </a>
-                        <a target="_blank">
-                            <i class="fab fa-sass tooltip">
-                                <span class="tooltiptext">Sass</span>
-                            </i>
-                        </a>
-                    </div>
-                </div>
-                <!-- contact item end -->
-                <!-- contact item start -->
-                <div class="contact-item">
-                    <div class="contact-item-inner outer-shadow">
-                        <a target="_blank" href="https://nilkanthtextilegroup.com/"><span>Nilkanth textile
-                                group</span></a>
-                        <a target="_blank">
-                            <i class="fab fa-react tooltip">
-                                <span class="tooltiptext">React Js</span>
-                            </i>
-                        </a>
-                        <a target="_blank">
-                            <i class="fab fa-sass tooltip">
-                                <span class="tooltiptext">Sass</span>
-                            </i>
-                        </a>
-                    </div>
-                </div>
-                <!-- contact item end -->
-                <!-- contact item start -->
-                <div class="contact-item">
-                    <div class="contact-item-inner outer-shadow">
-                        <a target="_blank" href="https://yashghori.github.io/Music-Waves/"><span>Music-Waves</span></a>
-                        <a target="_blank" href="https://github.com/yashghori/Music-Waves"><i
-                                class="fab fa-github"></i></a>
-                        <a target="_blank">
-                            <i class="fab fa-react tooltip">
-                                <span class="tooltiptext tooltip">React Js</span>
-                            </i>
-                        </a>
-                        <a target="_blank">
-                            <i class="fab fa-sass tooltip">
-                                <span class="tooltiptext tooltip">Sass</span>
-                            </i>
-                        </a>
-                    </div>
-                </div>
-                <!-- contact item end -->
-                <!-- contact item start -->
-                <div class="contact-item">
-                    <div class="contact-item-inner outer-shadow">
-                        <a target="_blank" href="https://yashghori.github.io/studiowebapp/"><span>Studio
-                                Portfolio</span></a>
-                        <a target="_blank" href="https://github.com/yashghori/studiowebapp"><i
-                                class="fab fa-github"></i></a>
-                        <a target="_blank">
-                            <i class="fab fa-react tooltip">
-                                <span class="tooltiptext">React Js</span>
-                            </i>
-                        </a>
-                        <a target="_blank">
-                            <i class="fab fa-sass tooltip">
-                                <span class="tooltiptext">Sass</span>
-                            </i>
-                        </a>
-                    </div>
-                </div>
-                <!-- contact item end -->
-                <!-- contact item start -->
-                <div class="contact-item">
-                    <div class="contact-item-inner outer-shadow">
-                        <a target="_blank" href="https://yashghori.github.io/SpeakingBooks/"><span>Speaking
-                                Books</span></a>
-                        <a target="_blank" href="https://github.com/yashghori/SpeakingBooks"><i
-                                class="fab fa-github"></i></a>
-                        <a target="_blank">
-                            <i class="fab fa-html5 tooltip">
-                                <span class="tooltiptext">HTML</span>
-                            </i>
-                        </a>
-                        <a target="_blank">
-                            <i class="fab fa-css3-alt tooltip">
-                                <span class="tooltiptext">CSS</span>
-                            </i>
-                        </a>
-                        <a target="_blank">
-                            <i class="fab fa-js tooltip">
-                                <span class="tooltiptext">JavaScript</span>
-                            </i>
-                        </a>
-                    </div>
-                </div>
-                <!-- contact item end -->
-                <!-- contact item start -->
-                <div class="contact-item">
-                    <div class="contact-item-inner outer-shadow">
-                        <a target="_blank" href="https://github.com/yashghori"><span>And many more...</span></a>
-                    </div>
-                </div>
-                <!-- contact item end -->
-
-
-            </div>
-        </div>
-    </section>
-    <!-- projects section end -->
-
-
-    <!-- contact section start -->
-    <section class="section contact-section">
-        <div class="container">
-            <div class="row">
-                <div class="section-title">
-                    <h2 data-heading="contact">Get in touch</h2>
-                </div>
-            </div>
-            <div class="row">
-                <!-- contact item start -->
-                <div class="contact-item">
-                    <div class="contact-item-inner outer-shadow">
-                        <i class="fas fa-phone"></i>
-                        <span>Phone</span>
-                        <p>+91 704 814 4030</p>
-                    </div>
-                </div>
-                <!-- contact item end -->
-                <!-- contact item start -->
-                <div class="contact-item">
-                    <div class="contact-item-inner outer-shadow">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Address</span>
-                        <p>Ahmedabad, Gujarat</p>
-                    </div>
-                </div>
-                <!-- contact item end -->
-                <!-- contact item start -->
-                <div class="contact-item">
-                    <div class="contact-item-inner outer-shadow">
-                        <i class="fas fa-at"></i>
-                        <span>Email</span>
-                        <p><a href="mailto:yashghori2804@gmail.com">yashghori2804@gmail.com</a></p>
-                    </div>
-                    <!-- contact item end -->
-                </div>
-            </div>
-    </section>
-    <!-- contact section end -->
-
-    <!-- style switcher start -->
-    <div class="style-switcher">
-        <div class="style-switcher-toggler s-icon">
-            <i class="fas fa-cog fa-spin"></i>
-        </div>
-        <div class="day-night s-icon">
-            <i class="fas"></i>
-        </div>
-        <a href="html/blogs.html">
-            <div class="blogs s-icon">
-                <i class="fas fa-solid fa-blog"></i>
-            </div>
+      <div class="hero-actions" data-reveal style="--i:5">
+        <a class="btn btn-primary" data-magnetic href="/assets/YashGhoriASE-I.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" width="16" height="16" aria-hidden="true">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"></path>
+          </svg>
+          Resume
         </a>
-
-        <h4>Theme colors</h4>
-        <div class="colors">
-            <span class="color-1" onclick="setActiveStyle('color-1')"></span>
-            <span class="color-2" onclick="setActiveStyle('color-2')"></span>
-            <span class="color-3" onclick="setActiveStyle('color-3')"></span>
-            <span class="color-4" onclick="setActiveStyle('color-4')"></span>
-            <span class="color-5" onclick="setActiveStyle('color-5')"></span>
-            <span id="specialSpan" class="color-6" onclick="setActiveStyle('color-6')"></span>
+        <div class="icon-links">
+          <a class="icon-link" href="mailto:yashghori2804@gmail.com" aria-label="Email Yash Ghori">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              <path d="m2 7 10 6 10-6"></path>
+            </svg>
+          </a>
+          <a class="icon-link" href="https://www.linkedin.com/in/yashghori" target="_blank" rel="noopener"
+            aria-label="Yash Ghori on LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"></path>
+            </svg>
+          </a>
+          <a class="icon-link" href="https://github.com/yashghori" target="_blank" rel="noopener"
+            aria-label="Yash Ghori on GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.1.82-.26.82-.58v-2.03c-3.34.73-4.04-1.6-4.04-1.6-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.39 1.24-3.23-.13-.3-.54-1.52.11-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.3-1.55 3.3-1.23 3.3-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.92 1.23 3.23 0 4.62-2.8 5.64-5.48 5.94.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.57A12 12 0 0 0 12 .5z"></path>
+            </svg>
+          </a>
         </div>
-    </div>
-    <div class="project icon">
-        <a href="#project-section"><i class="fas fa-tasks"></i></a>
-    </div>
+      </div>
 
-    <footer class="footer-section outer-shadow">
-        <div class="p">Designed and Managed by <a target="_blank"
-                href="https://www.linkedin.com/in/yash-ghori-1b984a1b1/">Yash Ghori</a></div>
-        <div class="social-links">
-            <!-- <a target="_blank" href="https://www.instagram.com/_.oyeyash._/" class="outer-shadow hover-in-shadow"><i
-                    class="fab fa-instagram"></i></a> -->
-            <a target="_blank" href="https://twitter.com/YashGhori3?s=09" class="outer-shadow hover-in-shadow"><i
-                    class="fab fa-twitter"></i></a>
-            <a target="_blank" href="https://www.linkedin.com/in/yash-ghori-1b984a1b1/"
-                class="outer-shadow hover-in-shadow"><i class="fab fa-linkedin-in"></i></a>
-            <a target="_blank" href="https://github.com/yashghori" class="outer-shadow hover-in-shadow"><i
-                    class="fab fa-github"></i></a>
+      <div class="tech-badges" aria-label="Core technologies" data-reveal style="--i:6">
+        <span class="badge">Angular</span>
+        <span class="badge">TypeScript</span>
+        <span class="badge">RxJS</span>
+        <span class="badge">SCSS</span>
+      </div>
+    </section>
+
+    <!-- ===================== Stat strip ===================== -->
+    <section class="container stats-section" aria-label="At a glance">
+      <div class="stats reveal-stagger">
+        <div class="stat" data-reveal style="--i:0">
+          <div class="stat-num"><span data-count="3">3</span><span class="stat-plus">+</span></div>
+          <div class="stat-label">Years shipping<br>production frontend</div>
         </div>
-    </footer>
+        <div class="stat" data-reveal style="--i:1">
+          <div class="stat-num">v<span data-count="13">13</span><span class="stat-arrow">→</span><span data-count="19">19</span></div>
+          <div class="stat-label">Angular migration<br>led, zero downtime</div>
+        </div>
+        <div class="stat" data-reveal style="--i:2">
+          <div class="stat-num"><span data-count="2">2</span></div>
+          <div class="stat-label">Enterprise platforms<br>in production</div>
+        </div>
+        <div class="stat" data-reveal style="--i:3">
+          <div class="stat-num">Sole</div>
+          <div class="stat-label">Frontend lead<br>on the migration</div>
+        </div>
+      </div>
+    </section>
 
-    <!-- style switcher end -->
+    <!-- ===================== Featured Work ===================== -->
+    <section id="work" class="alt" aria-labelledby="work-label">
+     <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="section-label" id="work-label">Featured Work</p>
+        <p class="section-intro">Two enterprise platforms I build and scale at Asite as the frontend lead.</p>
+      </div>
+      <div class="feature-grid reveal-stagger">
 
-    <script src="js/shared.js"></script>
-    <script src="js/script.js"></script>
-    <!-- jQuery CDN link -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js"
-        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <article class="feature-card" data-tilt data-reveal style="--i:0">
+          <div class="feature-head">
+            <span class="feature-kind mono">Enterprise · B2B</span>
+            <span class="feature-num mono">01</span>
+          </div>
+          <h3 class="feature-name">Asite Marketplace</h3>
+          <p class="feature-desc">
+            A B2B marketplace connecting project owners, contractors and subcontractors across capital
+            projects — reactive Angular UI, modular architecture, performance-tuned at scale.
+          </p>
+          <div class="feature-tags">
+            <span class="tag">Angular</span><span class="tag">TypeScript</span><span class="tag">RxJS</span><span class="tag">SCSS</span>
+          </div>
+          <a class="feature-link" href="https://uk.marketplace.asite.com" target="_blank" rel="noopener">
+            Visit live
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"></path></svg>
+          </a>
+        </article>
 
+        <article class="feature-card" data-tilt data-reveal style="--i:1">
+          <div class="feature-head">
+            <span class="feature-kind mono">Global · AEC</span>
+            <span class="feature-num mono">02</span>
+          </div>
+          <h3 class="feature-name">Asite Adoddle</h3>
+          <p class="feature-desc">
+            A global project &amp; supply-chain management platform for architecture, engineering and
+            construction firms — standalone components, lazy loading and OnPush throughout.
+          </p>
+          <div class="feature-tags">
+            <span class="tag">Angular</span><span class="tag">TypeScript</span><span class="tag">RxJS</span><span class="tag">SCSS</span>
+          </div>
+          <a class="feature-link" href="https://system.asite.com" target="_blank" rel="noopener">
+            Visit live
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"></path></svg>
+          </a>
+        </article>
 
-    <script>
-        $(document).ready(function () {
-            $(window).scroll(function () {
-                if ($(window).scrollTop() > 300) {
-                    $(".scroll-up").css({
-                        "opacity": "9999999999999999999999999999",
-                        "pointer-events": "auto"
-                    });
-                } else {
-                    $(".scroll-up").css({
-                        "opacity": "0",
-                        "pointer-events": "none"
-                    });
-                }
-            });
-            $(".scroll-up").click(function () {
-                $("html").animate({ scrollTop: 0 }, 100);
-            });
-        });
-    </script>
+      </div>
+     </div>
+    </section>
+
+    <!-- ===================== Experience ===================== -->
+    <section id="experience" aria-labelledby="experience-label">
+     <div class="container">
+      <p class="section-label" id="experience-label" data-reveal>Experience</p>
+      <article class="xp card" data-reveal>
+        <img class="xp-logo" src="/assets/asite_logo.jpeg" alt="Asite logo" width="44" height="44">
+        <div>
+          <div class="xp-head">
+            <div>
+              <div class="xp-role">Software Engineer — Frontend</div>
+              <div class="xp-company">
+                <a href="https://www.asite.com" target="_blank" rel="noopener">Asite Solutions</a>, Ahmedabad
+              </div>
+            </div>
+            <div class="xp-dates">Jun 2023 — Present <span id="asite-duration"></span></div>
+          </div>
+
+          <div class="promo" aria-label="Promotion trail">
+            <span class="step">Associate '23</span>
+            <span class="arrow">→</span>
+            <span class="step">SE I '24</span>
+            <span class="arrow">→</span>
+            <span class="step">SE II '25</span>
+          </div>
+
+          <ul class="xp-bullets">
+            <li>Led the Angular migration from v13 to v19 with zero downtime as sole frontend lead.</li>
+            <li>Built a reusable component library with Angular Material and SCSS.</li>
+            <li>Implemented standalone components, lazy loading and a modular architecture.</li>
+            <li>Optimized performance using OnPush change detection, trackBy and shareReplay.</li>
+            <li>Developed reactive interfaces with Reactive Forms and RxJS Observables.</li>
+            <li>Integrated REST APIs and contributed to code reviews and Agile sprints.</li>
+          </ul>
+        </div>
+      </article>
+     </div>
+    </section>
+
+    <!-- ===================== Skills (marquee) ===================== -->
+    <section id="skills" class="container" aria-labelledby="skills-label">
+      <p class="section-label" id="skills-label" data-reveal>Skills &amp; Tooling</p>
+      <div class="marquee" data-reveal aria-label="Core Angular technologies">
+        <div class="marquee-track">
+          <span class="m-tag">Angular</span><span class="m-tag">TypeScript</span><span class="m-tag">RxJS</span><span class="m-tag">SCSS</span><span class="m-tag">Signals</span><span class="m-tag">Standalone Components</span><span class="m-tag">Reactive Forms</span><span class="m-tag">OnPush</span><span class="m-tag">Lazy Loading</span><span class="m-tag">State Management</span>
+          <span class="m-tag" aria-hidden="true">Angular</span><span class="m-tag" aria-hidden="true">TypeScript</span><span class="m-tag" aria-hidden="true">RxJS</span><span class="m-tag" aria-hidden="true">SCSS</span><span class="m-tag" aria-hidden="true">Signals</span><span class="m-tag" aria-hidden="true">Standalone Components</span><span class="m-tag" aria-hidden="true">Reactive Forms</span><span class="m-tag" aria-hidden="true">OnPush</span><span class="m-tag" aria-hidden="true">Lazy Loading</span><span class="m-tag" aria-hidden="true">State Management</span>
+        </div>
+      </div>
+      <div class="marquee marquee--reverse" data-reveal aria-label="Wider toolkit">
+        <div class="marquee-track">
+          <span class="m-tag">JavaScript</span><span class="m-tag">React</span><span class="m-tag">AngularJS</span><span class="m-tag">jQuery</span><span class="m-tag">Gulp</span><span class="m-tag">REST APIs</span><span class="m-tag">Git</span><span class="m-tag">Jira</span><span class="m-tag">Postman</span><span class="m-tag">npm</span><span class="m-tag">Agile / Scrum</span>
+          <span class="m-tag" aria-hidden="true">JavaScript</span><span class="m-tag" aria-hidden="true">React</span><span class="m-tag" aria-hidden="true">AngularJS</span><span class="m-tag" aria-hidden="true">jQuery</span><span class="m-tag" aria-hidden="true">Gulp</span><span class="m-tag" aria-hidden="true">REST APIs</span><span class="m-tag" aria-hidden="true">Git</span><span class="m-tag" aria-hidden="true">Jira</span><span class="m-tag" aria-hidden="true">Postman</span><span class="m-tag" aria-hidden="true">npm</span><span class="m-tag" aria-hidden="true">Agile / Scrum</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Education ===================== -->
+    <section id="education" class="container" aria-labelledby="education-label">
+      <p class="section-label" id="education-label" data-reveal>Education</p>
+      <div class="edu" data-reveal>
+        <img class="edu-logo" src="/assets/bvm-logo.jpeg" alt="Birla Vishvakarma Mahavidyalaya logo" width="44" height="44">
+        <div class="edu-body">
+          <div class="edu-degree">B.Tech — Information Technology</div>
+          <div class="edu-school">Birla Vishvakarma Mahavidyalaya, Vallabh Vidyanagar</div>
+        </div>
+        <div class="edu-meta">2019 — 2023 · CGPA 8.0 / 10</div>
+      </div>
+    </section>
+
+    <!-- ===================== Contact ===================== -->
+    <section id="contact" class="alt" aria-labelledby="contact-label">
+     <div class="container">
+      <p class="section-label" id="contact-label" data-reveal>Contact</p>
+      <div class="contact-card" data-reveal>
+        <h2 class="contact-title">Let's build something.</h2>
+        <p class="contact-sub">
+          Open to interesting frontend work and conversations. The fastest way to reach me is email.
+        </p>
+        <div class="contact-row">
+          <a class="btn btn-primary" data-magnetic href="mailto:yashghori2804@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" width="16" height="16" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              <path d="m2 7 10 6 10-6"></path>
+            </svg>
+            yashghori2804@gmail.com
+          </a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/yashghori" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn btn-ghost" href="https://github.com/yashghori" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <p class="contact-loc">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          Ahmedabad, Gujarat, India
+        </p>
+      </div>
+     </div>
+    </section>
+  </main>
+
+  <!-- ===================== Footer ===================== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>© <span id="year"></span> Yash Ghori</span>
+      <span>Built with vanilla HTML, CSS &amp; JS · <a href="https://github.com/yashghori/yashghori.github.io" target="_blank" rel="noopener">Source</a></span>
+    </div>
+  </footer>
+
+  <button class="to-top" id="to-top" type="button" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"></path></svg>
+  </button>
+
+  <script src="/scripts/background.js" defer></script>
+  <script src="/scripts/main.js"></script>
 </body>
 
 </html>
